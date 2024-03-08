@@ -20,14 +20,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mzaien/next-libs.git"
+    "url": "git+https://github.com/lac617a/next-active-link.git"
   },
   "keywords": [
-    "next",
+    "next navigation",
+    "next link",
+    "link",
     "next.js",
     "react",
-    "lib",
-    "template"
+    "lib"
   ],
   "scripts": {
     "dev": "next dev",
@@ -36,8 +37,8 @@
     "lint": "next lint",
     "watch": "microbundle --watch",
     "build:package": "microbundle --jsx React.createElement --compress --visualize --tsconfig tsconfig.json ",
-    "prepare": "rmdir -rf dist && rmdir -rf .next && yarn build:package",
-    "pack-size": "npm pack && tar -xvzf *.tgz && rmdir -rf package *.tgz ",
+    "prepare": "rmdir dist && rmdir .next && yarn build:package",
+    "pack-size": "npm pack && tar -xvzf *.tgz && rmdir package *.tgz ",
     "publish": "np --no-tests"
   },
   "peerDependencies": {
@@ -56,9 +57,7 @@
     "np": "^7.6.2",
     "react": "^18",
     "react-dom": "^18",
+    "rmdir": "^1.2.0",
     "typescript": "^5"
-  },
-  "dependencies": {
-    "rmdir": "^1.2.0"
   }
 }
