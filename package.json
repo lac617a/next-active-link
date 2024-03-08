@@ -37,8 +37,8 @@
     "lint": "next lint",
     "watch": "microbundle --watch",
     "build:package": "microbundle --jsx React.createElement --compress --visualize --tsconfig tsconfig.json ",
-    "prepare": "rmdir dist && rmdir .next && yarn build:package",
-    "pack-size": "npm pack && tar -xvzf *.tgz && rmdir package *.tgz ",
+    "prepare": "rimraf dist && rimraf .next && yarn build:package",
+    "pack-size": "npm pack && tar -xvzf *.tgz && rimraf package *.tgz ",
     "publish": "np --no-tests"
   },
   "peerDependencies": {
@@ -57,7 +57,7 @@
     "np": "^7.6.2",
     "react": "^18",
     "react-dom": "^18",
-    "rmdir": "^1.2.0",
+    "rimraf": "^5.0.5",
     "typescript": "^5"
   }
 }
