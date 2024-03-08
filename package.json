@@ -1,24 +1,64 @@
 {
-  "name": "next-activeuu-link",
+  "name": "next-active-link",
+  "license": "MIT",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.esm.js",
+  "exports": "./dist/index.modern.js",
+  "source": "src/next-active-link.tsx",
+  "author": "Dominyel Rivera <dominyel.r@gmail.com>",
+  "publishConfig": {
+    "source": "src/next-active-link.tsx",
+    "main": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mzaien/next-libs.git"
+  },
+  "keywords": [
+    "next",
+    "next.js",
+    "react",
+    "lib",
+    "template"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "watch": "microbundle --watch",
+    "build:package": "microbundle --jsx React.createElement --compress --visualize --tsconfig tsconfig.json ",
+    "prepare": "rmdir -rf dist && rmdir -rf .next && yarn build:package",
+    "pack-size": "npm pack && tar -xvzf *.tgz && rmdir -rf package *.tgz ",
+    "publish": "np --no-tests"
   },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "13.5.6"
+  "peerDependencies": {
+    "next": ">= 13.0.0",
+    "react": ">=  17.0.2",
+    "react-dom": ">= 17.0.2"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "13.5.6"
+    "eslint-config-next": "13.5.6",
+    "microbundle": "^0.15.0",
+    "next": "13.5.6",
+    "np": "^7.6.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "rmdir": "^1.2.0"
   }
 }
